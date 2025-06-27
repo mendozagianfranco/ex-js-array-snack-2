@@ -92,7 +92,13 @@ console.log(authors);
 const areAuthorsAdults = authors.every(a => a.ge > 18);
 console.log(areAuthorsAdults);
 
-authors.sort((a, b) => b.age - a.age);
+// authors.sort((a, b) => (a.age - b.age) * (areAuthorsAdults ? 1 : -1));
+
+if (areAuthorsAdults) {
+    authors.sort((a, b) => a.age - b.age);
+} else {
+    authors.sort((a, b) => b.age - a.age);
+}
 console.log(authors);
 
 // Snack 3 - Calcola l’età media
@@ -183,4 +189,14 @@ console.log(booksByPrice);
 
 // }, {});
 
-// console.log(tagCounts);
+const tagCounts = books.reduce((acc, b) => {
+    b.tags.forEach(tag => {
+        if (!acc[tag]) {
+            acc[tag] = 0;
+        }
+        acc[tag]++;
+    });
+    return acc;
+}, {});
+
+console.log(tagCounts);
