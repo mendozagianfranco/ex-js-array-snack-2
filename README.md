@@ -54,3 +54,7 @@ Metodo: reduce
 
 ## Scopo
 Esercitazione per padroneggiare metodi avanzati degli array e combinare logica funzionale e asincrona in JS.
+
+## Backend Mock
+
+Questo progetto utilizza un backend mock pronto all’uso fornito da [Boolean IT / resources](https://github.com/boolean-it/resources). Non è necessario creare un database locale: basta eseguire il mock server per avere le API attive.
